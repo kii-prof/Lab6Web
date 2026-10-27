@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project - Pendaftaran Workshop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="workshop.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Form Pendaftaran Workshop Web Development</h1>
+        <nav>
+            <a href="index.html">← Kembali ke Praktikum</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Isi Form Pendaftaran</h2>
+            <form id="workshopForm" novalidate>
+                <!-- Input Nama & Live Character Counter -->
+                <div class="form-group">
+                    <label for="wsNama">Nama Lengkap (Min. 3 karakter):</label>
+                    <input type="text" id="wsNama" maxlength="50" placeholder="Masukkan nama Anda">
+                    <small>Jumlah Karakter: <span id="wsCharCount">0</span>/50</small>
+                </div>
+
+                <!-- Input Email -->
+                <div class="form-group">
+                    <label for="wsEmail">Alamat Email:</label>
+                    <input type="email" id="wsEmail" placeholder="contoh@domain.com">
+                </div>
+
+                <!-- Select Dropdown Sesi -->
+                <div class="form-group">
+                    <label for="wsSesi">Pilihan Sesi Workshop:</label>
+                    <select id="wsSesi">
+                        <option value="">-- Pilih Sesi --</option>
+                        <option value="Frontend (HTML, CSS, JS)">Frontend (HTML, CSS, JS)</option>
+                        <option value="Backend (Node.js & Express)">Backend (Node.js & Express)</option>
+                        <option value="UI/UX Design Masterclass">UI/UX Design Masterclass</option>
+                    </select>
+                </div>
+
+                <!-- Tombol Submit & Reset -->
+                <div class="form-group">
+                    <button type="submit">Daftar Workshop</button>
+                    <button type="button" id="btnResetForm" class="btn-reset">Reset Input</button>
+                </div>
+            </form>
+
+            <p id="wsPesanStatus" class="status-msg" aria-live="polite"></p>
+        </section>
+
+        <!-- Live Preview / Ringkasan Input Secara Langsung -->
+        <section class="card">
+            <h2>Ringkasan Pendaftaran (Live Preview)</h2>
+            <div id="previewCard">
+                <p><strong>Nama:</strong> <span id="prevNama">-</span></p>
+                <p><strong>Email:</strong> <span id="prevEmail">-</span></p>
+                <p><strong>Sesi Dipilih:</strong> <span id="prevSesi">-</span></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum DOM dan Event</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="judul">Latihan DOM</h1>
+        <nav>
+            <a href="index.html">Praktikum</a> | 
+            <a href="workshop.html">Mini Project (Form Workshop)</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Event Click & Input -->
+        <section class="card">
+            <h2>1. Manipulasi Teks & Event Input</h2>
+            <p id="pesan">Belum ada tindakan.</p>
+            
+            <div class="form-group">
+                <label for="namaInput">Nama:</label>
+                <input type="text" id="namaInput" maxlength="40" placeholder="Ketik nama...">
+                <p>Jumlah karakter: <span id="jumlahKarakter">0</span></p>
+            </div>
+            
+            <button id="tombolAksi" type="button">Klik Saya</button>
+        </section>
+
+        <!-- Section 2: Manipulasi Style & Toggle Sembunyi/Tampil (Eksperimen #4) -->
+        <section class="card">
+            <h2>2. Manipulasi Gaya & Toggle Paragraf</h2>
+            <p id="teksGaya">Ini adalah paragraf contoh untuk pengujian manipulasi kelas dan penyembunyian teks.</p>
+            <button id="tombolGaya" type="button">Toggle Highlight & Ukuran</button>
+            <button id="tombolSembunyi" type="button">Sembunyikan / Tampilkan Paragraf</button>
+        </section>
+
+        <!-- Section 3: Form Pendaftaran dengan Validasi (Eksperimen #2 & #3) -->
+        <section class="card">
+            <h2>3. Form Pendaftaran Sederhana</h2>
+            <form id="formPendaftaran" novalidate>
+                <div class="form-group">
+                    <label for="nama">Nama lengkap (Min. 3 Karakter):</label>
+                    <input id="nama" name="nama" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="usia">Usia (17–100):</label>
+                    <input id="usia" name="usia" type="number" min="17" max="100">
+                </div>
+
+                <!-- Eksperimen #3: Dropdown Sesi Workshop -->
+                <div class="form-group">
+                    <label for="sesiWorkshop">Pilih Sesi Workshop:</label>
+                    <select id="sesiWorkshop" name="sesiWorkshop">
+                        <option value="">-- Pilih Sesi --</option>
+                        <option value="Pagi (09.00 - 12.00)">Pagi (09.00 - 12.00)</option>
+                        <option value="Siang (13.00 - 16.00)">Siang (13.00 - 16.00)</option>
+                        <option value="Malam (19.00 - 21.00)">Malam (19.00 - 21.00)</option>
+                    </select>
+                    <p id="pesanSesi" class="info-text"></p>
+                </div>
+
+                <button type="submit">Daftar</button>
+            </form>
+            <p id="pesanForm" aria-live="polite" class="status-msg"></p>
+        </section>
+
+        <!-- Section 4: To-Do List (Eksperimen #1: Tombol Hapus) -->
+        <section class="card">
+            <h2>4. Daftar Tugas (To-Do List)</h2>
+            <div class="form-group inline-group">
+                <input id="inputTugas" type="text" placeholder="Tugas baru...">
+                <button id="tambahTugas" type="button">Tambah</button>
+            </div>
+            <p id="pesanTugas" aria-live="polite" class="status-msg"></p>
+            <ul id="daftarTugas"></ul>
+        </section>
+    </main>
+</body>
+</html>
